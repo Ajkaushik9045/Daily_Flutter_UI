@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_ui/Design%201/Components/card_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -37,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left:30.0,right: 20),
+              padding: const EdgeInsets.only(left: 30.0, right: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -56,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const Padding(
-              padding: EdgeInsets.only(left:30.0),
+              padding: EdgeInsets.only(left: 30.0),
               child: Text(
                 "Type Something....",
                 style: TextStyle(color: Colors.white24, fontSize: 30),
@@ -65,29 +66,92 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      body:  Column(
-        children: [
-          const SizedBox(height: 40,),
-          Padding(
-            padding: const EdgeInsets.only(left: 20.0,right: 20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text("Features",style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold),),
-                Container(
-                  height: 35,
-                  width: 70,
-                  decoration:  BoxDecoration(
-                    color: Colors.red[50],
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  child: const Center(child: Text("See all",style: TextStyle(color: Colors.red),)),
-                ),
-                
-              ],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: 20,
             ),
-          )
-        ],
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 20.0,
+                right: 20.0,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Features",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Container(
+                    height: 35,
+                    width: 70,
+                    decoration: BoxDecoration(
+                      color: Colors.red[50],
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                    child: const Center(
+                        child: Text(
+                      "See all",
+                      style: TextStyle(color: Colors.red),
+                    )),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 18.0),
+              child: SizedBox(height: 180, child: CardView()),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Buissness",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Container(
+                    height: 35,
+                    width: 70,
+                    decoration: BoxDecoration(
+                      color: Colors.red[50],
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                    child: const Center(
+                        child: Text(
+                      "See all",
+                      style: TextStyle(color: Colors.red),
+                    )),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 18.0),
+              child: SizedBox(height: 180, child: CardView()),
+            ),
+          ],
+        ),
       ),
     );
   }
